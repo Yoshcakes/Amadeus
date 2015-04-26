@@ -26,11 +26,6 @@ print 'The number of row in the bookings dataframe is ', len(bookings)
 answer = bookings.groupby('arr_port').sum().sort('pax', ascending = False).head(10)
 print 'The top 10 arrival airports in term of number of passengers are \n', answer[['pax']]
 
-with open('test.csv', 'w') as fp:
-    a = csv.writer(fp, delimiter=',')
-    a.writerows(answer[['pax']])
-    fp.close()
-
 # Question 3
 # Adding two new variables called month and year for easy
 searches['month'] = pd.DatetimeIndex(searches['Date']).month
