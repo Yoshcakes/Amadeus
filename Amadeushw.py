@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
+"""
+Answers to Amadeus interview problems
 """
 
 import pandas as pd
@@ -13,8 +11,8 @@ import matplotlib.pyplot as plt
 #Reading the data and specifying the number of rows for faster import
 nrowssearch = 20390198
 nrowsbookings = 10000011
-searches = pd.read_csv("searches.csv", sep='^', nrows = 50000)
-bookings = pd.read_csv("bookings.csv", sep='^', nrows = 10000)
+searches = pd.read_csv("searches.csv", sep='^', nrows = nrowssearch)
+bookings = pd.read_csv("bookings.csv", sep='^', nrows = nrowsbookings)
 
 #Taking a look at the data before diving in
 print searches.head()
@@ -32,7 +30,6 @@ with open('test.csv', 'w') as fp:
     a = csv.writer(fp, delimiter=',')
     a.writerows(answer[['pax']])
     fp.close()
-
 
 # Question 3
 # Adding two new variables called month and year for easy
